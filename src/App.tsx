@@ -1,20 +1,26 @@
-function App() {
+import { useState } from "react";
+import { BootSequence } from "./features/BootSequence";
+
+export default function App() {
+  const [bootComplete, setBootComplete] = useState(false);
+
   return (
-    <main style={{ padding: "2rem" }}>
-      <h1
-        style={{
-          fontFamily: "var(--font-mono)",
-          color: "var(--primary)",
-          fontSize: "2rem",
-        }}
-      >
-        aditi.acharya
-      </h1>
-      <p style={{ color: "var(--muted-foreground)", marginTop: "0.5rem" }}>
-        senior software engineer
-      </p>
-    </main>
+    <>
+      {!bootComplete && (
+        <BootSequence onComplete={() => setBootComplete(true)} />
+      )}
+
+      {bootComplete && (
+        <main className="min-h-screen bg-background text-foreground font-sans">
+          <div className="max-w-5xl mx-auto px-6 py-10">
+            <h1 className="text-4xl font-bold">Hi, I’m Aditi 👋</h1>
+
+            <p className="mt-4 text-muted-foreground">
+              Portfolio loaded successfully.
+            </p>
+          </div>
+        </main>
+      )}
+    </>
   );
 }
-
-export default App;
