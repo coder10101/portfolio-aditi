@@ -12,12 +12,30 @@
   --radius: 0.625rem;
   --font-mono: "JetBrains Mono", monospace;
   --font-sans: "Inter", sans-serif;
+
+  /* Surfaces */
+  --surface: #0f0f14;
+  --surface-elevated: #1a1a24;
+
+  /* Text */
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.6);
+  --subtle: rgba(255, 255, 255, 0.4);
+
+  /* Brand */
+  --primary: #c8f542;
+  --primary-soft: rgba(200, 245, 66, 0.15);
+
+  /* Status */
+  --success: #28c840;
+  --warning: #febc2e;
+  --danger: #ff5f57;
 }
 
-* {
+html,
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
