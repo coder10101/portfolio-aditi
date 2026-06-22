@@ -13,7 +13,7 @@ export function Nav({ booted }: NavProps) {
         ${booted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"}
       `}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-16 items-center justify-between px-8">
         <span
           className="font-mono text-[13px] tracking-[0.1em]"
           style={{ color: "var(--primary)" }}
