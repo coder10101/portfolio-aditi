@@ -9,7 +9,6 @@ export function About() {
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
       }}
-      className="hero-grid"
     >
       <AboutSection />
     </section>
