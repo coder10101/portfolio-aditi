@@ -8,14 +8,20 @@ export function CodeEditorSection() {
   const startIndex = 6;
   const staticLines = lines.slice(0, startIndex);
   const animatedText = lines.slice(startIndex).join("\n");
-  const { value, done } = useTypewriter(animatedText);
+  const { value } = useTypewriter(animatedText);
 
   return (
     <div className="code-editor-section">
       <div className="editor-window">
         <div className="editor-tabs">
-          <div className="editor-tab editor-tab--active">engineer.ts</div>
-          <div className="editor-tab">resume.pdf</div>
+          <div className="editor-tab editor-tab--active">
+            <span className="tab-dot tab-dot--active" />
+            engineer.ts
+          </div>
+          <div className="editor-tab">
+            <span className="tab-dot" />
+            resume.pdf
+          </div>
         </div>
 
         <div className="editor-content">

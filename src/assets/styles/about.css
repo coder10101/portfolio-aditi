@@ -29,10 +29,26 @@
 }
 
 .editor-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 10px 20px;
-  font-size: 12px;
   font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.3);
+}
+
+.tab-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  /* grey */
+}
+
+.tab-dot--active {
+  background: var(--primary);
+  opacity: 0.9;
 }
 
 .editor-tab--active {
@@ -121,7 +137,7 @@
 }
 
 .token-string {
-  color: #c8f542;
+  color: var(--primary);
 }
 
 .token-keyword {
