@@ -14,3 +14,29 @@ export const BOOTLINES = [
   { text: "✓ build successful (0 errors, 0 warnings)", delay: 2200 },
   { text: "$ launching aditiacharya.dev", delay: 2500 },
 ];
+
+export const CODESNIPPETS = `// Aditi Acharya — Senior Software Engineer
+// 7+ years · React · React Native · Rails · Node.js ·
+
+const engineer = {
+  name: "Aditi Acharya",
+  role: "Senior Software Engineer",
+  platforms: ["Web", "iOS", "Android"],
+  stack: [ "ReactJS", "React Native", "Ruby on Rails", "Node.js"],
+  db: ["PostgreSQL", "MySQL", "Redis"],
+  cloud: ["AWS S3", "GitHub Actions", "Firebase"],
+  superpower: "ships products end-to-end",
+};`;
+
+export const CODEEDITORBOTTOMINFO = [
+  "TypeScript",
+  "UTF-8",
+  "Ln 14, Col 1",
+  "✓ 0 errors",
+];
+
+export const STATS = [
+  { v: "7+", l: "Years" },
+  { v: "Web+iOS+Android", l: "Platforms" },
+  { v: "MBA+BSc", l: "Degrees" },
+];
