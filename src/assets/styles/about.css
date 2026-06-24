@@ -70,10 +70,8 @@
 
 .cursor {
   display: inline-block;
-  width: 7px;
-  height: 14px;
-  background: var(--primary);
-  vertical-align: middle;
+  margin-left: 2px;
+  color: var(--primary);
   animation: blink 1s step-end infinite;
 }
 
@@ -116,6 +114,22 @@
   letter-spacing: 0.1em;
   font-family: "JetBrains Mono", monospace;
   color: var(--muted-foreground);
+}
+
+.token-comment {
+  color: #5a6a3a;
+}
+
+.token-string {
+  color: #c8f542;
+}
+
+.token-keyword {
+  color: #cf8aff;
+}
+
+.token-property {
+  color: #7dc4f5;
 }
 
 @keyframes blink {

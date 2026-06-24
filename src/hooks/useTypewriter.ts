@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
 
-export function useTypewriter(text: string, speed = 14, delay = 300) {
+export function useTypewriter(
+  text: string,
+  startFromKeyword = "stack",
+  speed = 14,
+  delay = 300,
+) {
   const [value, setValue] = useState("");
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    const startIndex = text.indexOf(startFromKeyword);
+
     const timeout = setTimeout(() => {
-      let index = 0;
+      let index = startIndex > 0 ? startIndex : 0;
 
       const interval = setInterval(() => {
         index++;
@@ -23,7 +30,7 @@ export function useTypewriter(text: string, speed = 14, delay = 300) {
     }, delay);
 
     return () => clearTimeout(timeout);
-  }, [text, speed, delay]);
+  }, [text, startFromKeyword, speed, delay]);
 
   return { value, done };
 }

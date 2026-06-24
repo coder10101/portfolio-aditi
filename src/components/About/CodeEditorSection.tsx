@@ -1,11 +1,14 @@
 import { CODEEDITORBOTTOMINFO, CODESNIPPETS, STATS } from "../../consts";
 import { useTypewriter } from "../../hooks/useTypewriter";
 import "../../assets/styles/about.css";
+import { CodeLine } from "./CodeLine";
 
 export function CodeEditorSection() {
-  const { value, done } = useTypewriter(CODESNIPPETS);
-
-  const lines = value.split("\n");
+  const lines = CODESNIPPETS.split("\n");
+  const startIndex = 6;
+  const staticLines = lines.slice(0, startIndex);
+  const animatedText = lines.slice(startIndex).join("\n");
+  const { value, done } = useTypewriter(animatedText);
 
   return (
     <div className="code-editor-section">
@@ -21,11 +24,19 @@ export function CodeEditorSection() {
               <div key={i}>{i + 1}</div>
             ))}
           </div>
-
-          <pre className="editor-code">
-            {value}
-            {!done && <span className="cursor" />}
-          </pre>
+          <div className="editor-code">
+            {staticLines.map((line, i) => (
+              <div key={`static-${i}`}>
+                <CodeLine line={line} />
+              </div>
+            ))}
+            {value.split("\n").map((line, i) => (
+              <div key={`anim-${i}`}>
+                <CodeLine line={line} />
+              </div>
+            ))}
+            <span className="cursor">▍</span>
+          </div>
         </div>
 
         <div className="editor-status">

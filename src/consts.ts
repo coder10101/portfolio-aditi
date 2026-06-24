@@ -17,7 +17,6 @@ export const BOOTLINES = [
 
 export const CODESNIPPETS = `// Aditi Acharya — Senior Software Engineer
 // 7+ years · React · React Native · Rails · Node.js ·
-
 const engineer = {
   name: "Aditi Acharya",
   role: "Senior Software Engineer",
