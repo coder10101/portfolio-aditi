@@ -89,10 +89,10 @@ export function AboutSection() {
             maxWidth: "420px",
           }}
         >
-          JavaScript engineer with 7+ years of experience crafting web and
-          mobile applications. Specializing in React and React Native, I focus
-          on building intuitive user experiences while contributing across APIs,
-          databases, and product delivery when needed.
+          Frontend engineer specializing in React and React Native, with a
+          strong foundation in JavaScript and TypeScript. Experienced in
+          delivering production-ready web and mobile applications that
+          prioritize user experience and business impact.
         </p>
 
         <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>

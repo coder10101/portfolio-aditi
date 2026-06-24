@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { BootSequence } from "./features/BootSequence";
 import { Nav } from "./components/Nav";
-import { About } from "./components/About";
+import { About } from "./components/About/About";
 
 export default function App() {
   const [booted, setBooted] = useState(false);

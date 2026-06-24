@@ -1,4 +1,5 @@
 import { AboutSection } from "./AboutSection";
+import { CodeEditorSection } from "./CodeEditorSection";
 
 export function About() {
   return (
@@ -11,6 +12,7 @@ export function About() {
       }}
     >
       <AboutSection />
+      <CodeEditorSection />
     </section>
   );
 }
