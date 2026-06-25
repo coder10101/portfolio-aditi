@@ -19,9 +19,11 @@ export function AboutSection() {
         </div>
 
         {/* Name */}
-        <h1 className="font-serif text-[clamp(3rem,6vw,5.5rem)] leading-none tracking-[-0.02em] text-[var(--foreground)] m-0 mb-4">
+        <h1 className="font-display text-[clamp(3rem,6vw,5.5rem)] leading-none tracking-[-0.02em] text-[var(--foreground)] m-0 mb-4">
           Aditi <br />
-          <span className="italic text-[var(--primary)]">Acharya</span>
+          <span className="italic text-[var(--primary)]">
+            Acharya
+          </span>
         </h1>
 
         {/* Title */}

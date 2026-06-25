@@ -82,7 +82,7 @@ export function Contact() {
             ))}
           </div>
 
-          <div className="mt-12 font-serif text-[2rem] text-[var(--foreground)] leading-[1.2]">
+          <div className="mt-12 font-display text-[2rem] text-[var(--foreground)] leading-[1.2]">
             Let's build
             <br />
             <span className="italic text-[var(--primary)]">

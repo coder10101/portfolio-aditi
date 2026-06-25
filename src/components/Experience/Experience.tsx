@@ -90,7 +90,7 @@ export function Experience() {
                   paddingBottom: isOpen ? "0" : "2rem",
                 }}
               >
-                <div className="font-serif text-[1.35rem] text-[var(--foreground)] leading-[1.2] mb-[2px]">
+                <div className="font-display text-[1.35rem] text-[var(--foreground)] leading-[1.2] mb-[2px]">
                   {commit.title}
                 </div>
                 <div

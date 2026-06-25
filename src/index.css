@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  --font-display: "DM Serif Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+}
+
 :root {
   --background: #0a0a0e;
   --foreground: #e8e6e1;

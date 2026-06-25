@@ -15,7 +15,7 @@ export function Education() {
         {DEGREES.map((ed) => (
           <div
             key={ed.abbr}
-            className="relative overflow-hidden p-10 bg-[var(--background)] hover:bg-[var(--card)] transition-colors duration-200"
+            className="relative overflow-hidden p-10 bg-[var(--background)] hover:bg-[var(--card)] transition-colors duration-200 "
           >
             {/* Watermark */}
             <div className="absolute top-1/2 -translate-y-1/2 right-[-10px] font-serif text-[10rem] italic leading-none select-none pointer-events-none text-[rgba(200,245,66,0.04)]">
@@ -27,7 +27,7 @@ export function Education() {
               <div className="font-mono text-[11px] tracking-[0.12em] text-[var(--primary)] mb-3">
                 {ed.year}
               </div>
-              <h3 className="font-serif text-[1.75rem] text-[var(--foreground)] m-0 mb-[6px] leading-[1.1]">
+              <h3 className="font-display text-[1.75rem] text-[var(--foreground)] m-0 mb-[6px] leading-[1.1]">
                 {ed.abbr}
                 <span className="italic"> ·</span>
               </h3>
