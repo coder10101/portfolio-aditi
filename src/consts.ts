@@ -140,3 +140,16 @@ export const COMMITS = [
     ],
   },
 ];
+
+export const TYPECOLORS: Record<string, string> = {
+  feat: "#c8f542",
+  fix: "#ff7b7b",
+  ci: "#7dc4f5",
+  chore: "#f5a623",
+  docs: "#cf8aff",
+  perf: "#7dc4f5",
+  api: "#cf8aff",
+  infra: "#f5a623",
+  team: "#cf8aff",
+  process: "#f5a623",
+};

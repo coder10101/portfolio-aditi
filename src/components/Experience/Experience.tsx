@@ -1,20 +1,7 @@
 import { useState } from "react";
 import { SectionLabel } from "./SectionLabel";
 import "../../assets/styles/experience.css";
-import { COMMITS } from "../../consts";
-
-const typeColors: Record<string, string> = {
-  feat: "#c8f542",
-  fix: "#ff7b7b",
-  ci: "#7dc4f5",
-  chore: "#f5a623",
-  docs: "#cf8aff",
-  perf: "#7dc4f5",
-  api: "#cf8aff",
-  infra: "#f5a623",
-  team: "#cf8aff",
-  process: "#f5a623",
-};
+import { COMMITS, TYPECOLORS } from "../../consts";
 
 function CommitLine({ text, color }: { text: string; color: string }) {
   const colonIdx = text.indexOf(": ");
@@ -25,7 +12,7 @@ function CommitLine({ text, color }: { text: string; color: string }) {
     <div className="commit-line-item">
       <span
         className="commit-line-type"
-        style={{ color: typeColors[type] ?? color }}
+        style={{ color: TYPECOLORS[type] ?? color }}
       >
         {type}:
       </span>
