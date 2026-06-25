@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { LINKS } from "../consts";
 
 type NavProps = {
@@ -5,6 +6,21 @@ type NavProps = {
 };
 
 export function Nav({ booted }: NavProps) {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollToSection = (link: string) => {
+    const el = document.getElementById(link.toLowerCase());
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       className={`
@@ -12,6 +28,13 @@ export function Nav({ booted }: NavProps) {
         transition-all duration-500
         ${booted ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"}
       `}
+      style={{
+        background: scrolled ? "var(--background)" : "transparent",
+        borderBottom: "1px solid transparent",
+        borderColor: scrolled ? "var(--border)" : "transparent",
+        backdropFilter: scrolled ? "blur(8px)" : "none",
+        transition: "all 0.5s ease",
+      }}
     >
       <div className="mx-auto flex h-16 items-center justify-between px-8">
         <span
@@ -25,7 +48,7 @@ export function Nav({ booted }: NavProps) {
           {LINKS.map((link) => (
             <li key={link}>
               <button
-                onClick={() => {}}
+                onClick={() => scrollToSection(link)}
                 className="font-mono text-xs tracking-[0.08em] transition-colors"
                 style={{
                   background: "none",
