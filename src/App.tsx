@@ -5,6 +5,7 @@ import { About } from "./components/About/About";
 import { Experience } from "./components/Experience/Experience";
 import { Skills } from "./components/Skills/Skills";
 import { Education } from "./components/Education/Education";
+import { Contact } from "./components/Contact/Contact";
 
 export default function App() {
   const [booted, setBooted] = useState(false);
@@ -34,6 +35,10 @@ export default function App() {
 
         <div className="border-t border-[var(--border)] bg-[var(--card)]">
           <Education />
+        </div>
+
+        <div className="border-t border-[var(--border)]">
+          <Contact />
         </div>
 
         <footer className="border-t border-[var(--border)] px-8 py-8 flex justify-between items-center max-md:flex-col max-md:gap-2 max-md:text-center">
