@@ -4,6 +4,7 @@ import { Nav } from "./components/Nav";
 import { About } from "./components/About/About";
 import { Experience } from "./components/Experience/Experience";
 import { Skills } from "./components/Skills/Skills";
+import { Education } from "./components/Education/Education";
 
 export default function App() {
   const [booted, setBooted] = useState(false);
@@ -24,6 +25,7 @@ export default function App() {
           <About />
           <Experience />
           <Skills />
+          <Education />
           <footer>
             <span>© 2026 Aditi Acharya</span>
             <span>Built with React · TypeScript · Tailwind</span>
