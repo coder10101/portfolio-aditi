@@ -3,6 +3,7 @@ import { BootSequence } from "./features/BootSequence";
 import { Nav } from "./components/Nav";
 import { About } from "./components/About/About";
 import { Experience } from "./components/Experience/Experience";
+import { Skills } from "./components/Skills/Skills";
 
 export default function App() {
   const [booted, setBooted] = useState(false);
@@ -22,6 +23,7 @@ export default function App() {
         <main className="pt-14 transition-opacity duration-700 opacity-100">
           <About />
           <Experience />
+          <Skills />
           <footer>
             <span>© 2026 Aditi Acharya</span>
             <span>Built with React · TypeScript · Tailwind</span>
