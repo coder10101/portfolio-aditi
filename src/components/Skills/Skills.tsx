@@ -1,57 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import "../../assets/styles/skills.css";
-import { SectionLabel } from "../SectionLabel";
 import { ADDITIONALTAGS, SKILLGROUPS } from "../../consts";
-
-interface Skill {
-  name: string;
-  level: number;
-  note: string;
-}
-
-function SkillBar({
-  skill,
-  index,
-  compiled,
-}: {
-  skill: Skill;
-  index: number;
-  compiled: boolean;
-}) {
-  const [hovered, setHovered] = useState(false);
-
-  return (
-    <div
-      className="skill-bar"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <div className="skill-bar__header">
-        <span className="skill-bar__name">{skill.name}</span>
-        <span
-          className={`skill-bar__level ${compiled ? "visible" : ""}`}
-          style={{ transitionDelay: `${index * 0.15 + 0.2}s` }}
-        >
-          {skill.level}%
-        </span>
-      </div>
-
-      <div className="skill-bar__track">
-        <div
-          className="skill-bar__fill"
-          style={{
-            width: compiled ? `${skill.level}%` : "0%",
-            transitionDelay: `${index * 0.15}s`,
-          }}
-        />
-      </div>
-
-      <div className={`skill-bar__note ${hovered ? "visible" : ""}`}>
-        // {skill.note}
-      </div>
-    </div>
-  );
-}
+import { SectionLabel } from "../SectionLabel";
+import { SkillBar } from "./SkillBar";
 
 export function Skills() {
   const [compiled, setCompiled] = useState(false);
@@ -75,30 +25,65 @@ export function Skills() {
   const group = SKILLGROUPS[activeGroup];
 
   return (
-    <section className="skills-section" id="skills" ref={ref}>
+    <section
+      id="skills"
+      className="px-8 py-[100px] max-w-[1200px] mx-auto"
+      ref={ref}
+    >
       <SectionLabel index="03" title="Stack" />
 
-      <p className="skills-git-command">$ npm run compile --stack</p>
+      <p className="font-mono text-[12px] text-[var(--muted-foreground)] mt-4 mb-12 tracking-[0.06em]">
+        $ npm run compile --stack
+      </p>
 
-      <div className="skills-grid">
+      {/* Grid */}
+      <div className="grid grid-cols-[180px_1fr] max-md:grid-cols-1 border border-[var(--border)]">
         {/* Sidebar */}
-        <div className="skills-sidebar">
-          <div className="skills-sidebar__heading">MODULES</div>
-          {SKILLGROUPS.map((group, i) => (
+        <div className="border-r border-[var(--border)] max-md:border-r-0 max-md:border-b max-md:flex max-md:overflow-x-auto">
+          <div className="font-mono text-[10px] tracking-[0.1em] text-[var(--muted-foreground)] px-4 py-[14px] border-b border-[var(--border)]">
+            MODULES
+          </div>
+          {SKILLGROUPS.map((g, i) => (
             <button
-              key={group.label}
-              className={`skills-sidebar__btn ${activeGroup === i ? "active" : ""}`}
+              key={g.label}
               onClick={() => setActiveGroup(i)}
+              className="flex items-center gap-[10px] w-full text-left border-b border-[var(--border)] px-4 py-[14px] cursor-pointer transition-all duration-200"
+              style={{
+                background:
+                  activeGroup === i ? "var(--secondary)" : "transparent",
+                borderLeft:
+                  activeGroup === i
+                    ? "2px solid var(--primary)"
+                    : "2px solid transparent",
+              }}
             >
-              <span className="skills-sidebar__dot" />
-              <span className="skills-sidebar__label">{group.label}</span>
+              <span
+                className="w-[6px] h-[6px] rounded-full shrink-0"
+                style={{
+                  background:
+                    activeGroup === i
+                      ? "var(--primary)"
+                      : "var(--muted-foreground)",
+                }}
+              />
+              <span
+                className="font-mono text-[12px] tracking-[0.04em]"
+                style={{
+                  color:
+                    activeGroup === i
+                      ? "var(--foreground)"
+                      : "var(--muted-foreground)",
+                }}
+              >
+                {g.label}
+              </span>
             </button>
           ))}
         </div>
 
         {/* Panel */}
-        <div className="skills-panel">
-          <div className="skills-panel__status">
+        <div className="p-7">
+          <div className="font-mono text-[11px] text-[var(--muted-foreground)] mb-6 pb-4 border-b border-[var(--border)] tracking-[0.06em]">
             compiling {group.label.toLowerCase()}... {compiled ? "✓ done" : "⠋"}
           </div>
           {group.skills.map((s, i) => (
@@ -107,11 +92,16 @@ export function Skills() {
         </div>
       </div>
 
-      {/* Also section */}
-      <div className="skills-also">
-        <span className="skills-also__label">ALSO:</span>
+      {/* Also */}
+      <div className="mt-8 px-8 py-6 border border-[var(--border)] bg-[var(--card)] flex flex-wrap gap-[10px] items-center">
+        <span className="font-mono text-[10px] tracking-[0.1em] text-[var(--muted-foreground)] mr-2">
+          ALSO:
+        </span>
         {ADDITIONALTAGS.map((tag) => (
-          <span key={tag} className="skills-also__tag">
+          <span
+            key={tag}
+            className="font-mono text-[11px] tracking-[0.04em] text-[var(--foreground)] bg-[var(--secondary)] px-3 py-[5px] border border-[var(--border)] cursor-default transition-colors duration-200 hover:border-[var(--primary)]"
+          >
             {tag}
           </span>
         ))}
