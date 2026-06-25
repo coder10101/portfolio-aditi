@@ -1,4 +1,4 @@
-import "../../assets/styles/sectionLabel.css";
+import "../assets/styles/sectionLabel.css";
 
 interface SectionLabelProps {
   index: string;
