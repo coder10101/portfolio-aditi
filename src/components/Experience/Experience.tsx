@@ -85,7 +85,7 @@ export function Experience() {
                 className="pl-5 transition-colors duration-200"
                 style={{
                   borderLeft: isOpen
-                    ? `2px solid ${c.color}`
+                    ? `2px solid ${commit.color}`
                     : "2px solid rgba(255,255,255,0.06)",
                   paddingBottom: isOpen ? "0" : "2rem",
                 }}
