@@ -2,12 +2,12 @@ import { CODEEDITORBOTTOMINFO, CODESNIPPETS, STATS } from "../../consts";
 import { useTypewriter } from "../../hooks/useTypewriter";
 import { CodeLine } from "./CodeLine";
 
-export function CodeEditorSection() {
+export function CodeEditorSection({ booted }: { booted: boolean }) {
   const lines = CODESNIPPETS.split("\n");
   const startIndex = 6;
   const staticLines = lines.slice(0, startIndex);
   const animatedText = lines.slice(startIndex).join("\n");
-  const { value } = useTypewriter(animatedText);
+  const { value } = useTypewriter(booted ? animatedText : "");
 
   return (
     <div className="flex flex-col justify-center px-12 py-24 bg-[var(--card)] max-md:px-8 max-md:py-12">

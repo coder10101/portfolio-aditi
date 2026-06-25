@@ -26,7 +26,7 @@ export default function App() {
       <main
         className={`pt-14 transition-opacity duration-700 ${booted ? "opacity-100" : "opacity-0"}`}
       >
-        <About />
+        <About booted={booted} />
 
         <div className="border-t border-[var(--border)] bg-[var(--card)]">
           <Experience />
