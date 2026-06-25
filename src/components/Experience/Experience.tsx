@@ -26,104 +26,102 @@ export function Experience() {
 
   return (
     <section className="experience-section" id="experience">
-      <div className="experience-body">
-        <SectionLabel index="02" title="Experience" />
+      <SectionLabel index="02" title="Experience" />
 
-        <p className="experience-git-command">
-          $ git log --all --graph --oneline
-        </p>
+      <p className="experience-git-command">
+        $ git log --all --graph --oneline
+      </p>
 
-        <div className="experience-list">
-          {COMMITS.map((c, idx) => {
-            const isOpen = expanded === c.hash;
+      <div className="experience-list">
+        {COMMITS.map((c, idx) => {
+          const isOpen = expanded === c.hash;
 
-            return (
-              <div
-                key={c.hash}
-                className="commit-row"
-                onClick={() => setExpanded(isOpen ? null : c.hash)}
-              >
-                {/* Graph */}
-                <div className="commit-graph">
-                  <div
-                    className={`commit-dot ${isOpen ? "active" : ""}`}
-                    style={
-                      {
-                        "--dot-color": c.color,
-                        border: `2px solid ${c.color}`,
-                      } as React.CSSProperties
-                    }
-                  />
-                  {idx < COMMITS.length - 1 && (
-                    <div
-                      className="commit-line"
-                      style={{
-                        background: `linear-gradient(to bottom, ${c.color}, ${COMMITS[idx + 1].color})`,
-                      }}
-                    />
-                  )}
-                </div>
-
-                {/* Hash + tag */}
-                <div className="commit-meta">
-                  <div className="commit-hash-row">
-                    <span className="commit-hash" style={{ color: c.color }}>
-                      {c.hash}
-                    </span>
-                    {c.tag && (
-                      <span
-                        className="commit-tag"
-                        style={{ background: c.color }}
-                      >
-                        {c.tag}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                {/* Content */}
+          return (
+            <div
+              key={c.hash}
+              className="commit-row"
+              onClick={() => setExpanded(isOpen ? null : c.hash)}
+            >
+              {/* Graph */}
+              <div className="commit-graph">
                 <div
-                  className={`commit-content ${isOpen ? "active" : ""}`}
+                  className={`commit-dot ${isOpen ? "active" : ""}`}
                   style={
                     {
                       "--dot-color": c.color,
-                      paddingBottom: isOpen ? "0" : "2rem",
+                      border: `2px solid ${c.color}`,
                     } as React.CSSProperties
                   }
-                >
-                  <div className="commit-title">{c.title}</div>
-                  <div className="commit-company" style={{ color: c.color }}>
-                    {c.company}
-                  </div>
-                  <div className="commit-date">{c.date}</div>
+                />
+                {idx < COMMITS.length - 1 && (
+                  <div
+                    className="commit-line"
+                    style={{
+                      background: `linear-gradient(to bottom, ${c.color}, ${COMMITS[idx + 1].color})`,
+                    }}
+                  />
+                )}
+              </div>
 
-                  <div className={`commit-expandable ${isOpen ? "open" : ""}`}>
-                    <div className="commit-details">
-                      {c.items.map((item, i) => (
-                        <CommitLine key={i} text={item} color={c.color} />
+              {/* Hash + tag */}
+              <div className="commit-meta">
+                <div className="commit-hash-row">
+                  <span className="commit-hash" style={{ color: c.color }}>
+                    {c.hash}
+                  </span>
+                  {c.tag && (
+                    <span
+                      className="commit-tag"
+                      style={{ background: c.color }}
+                    >
+                      {c.tag}
+                    </span>
+                  )}
+                </div>
+              </div>
+
+              {/* Content */}
+              <div
+                className={`commit-content ${isOpen ? "active" : ""}`}
+                style={
+                  {
+                    "--dot-color": c.color,
+                    paddingBottom: isOpen ? "0" : "2rem",
+                  } as React.CSSProperties
+                }
+              >
+                <div className="commit-title">{c.title}</div>
+                <div className="commit-company" style={{ color: c.color }}>
+                  {c.company}
+                </div>
+                <div className="commit-date">{c.date}</div>
+
+                <div className={`commit-expandable ${isOpen ? "open" : ""}`}>
+                  <div className="commit-details">
+                    {c.items.map((item, i) => (
+                      <CommitLine key={i} text={item} color={c.color} />
+                    ))}
+                    <div className="commit-stack">
+                      {c.stack.map((t) => (
+                        <span key={t} className="stack-tag">
+                          {t}
+                        </span>
                       ))}
-                      <div className="commit-stack">
-                        {c.stack.map((t) => (
-                          <span key={t} className="stack-tag">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 </div>
-
-                {/* Arrow */}
-                <div
-                  className={`commit-arrow ${isOpen ? "open" : ""}`}
-                  style={{ color: c.color }}
-                >
-                  ›
-                </div>
               </div>
-            );
-          })}
-        </div>
+
+              {/* Arrow */}
+              <div
+                className={`commit-arrow ${isOpen ? "open" : ""}`}
+                style={{ color: c.color }}
+              >
+                ›
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
