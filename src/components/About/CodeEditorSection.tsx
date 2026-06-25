@@ -35,7 +35,7 @@ export function CodeEditorSection() {
           </div>
 
           {/* Code */}
-          <pre className="m-0 whitespace-pre overflow-hidden font-mono text-[13px] leading-[1.7] text-white/70">
+          <div className="m-0 whitespace-pre overflow-hidden font-mono text-[13px] leading-[1.7] text-white/70">
             {staticLines.map((line, i) => (
               <div key={`static-${i}`}>
                 <CodeLine line={line} />
@@ -49,7 +49,7 @@ export function CodeEditorSection() {
             <span className="inline-block ml-[2px] text-[var(--primary)] animate-[blink_1s_step-end_infinite]">
               ▍
             </span>
-          </pre>
+          </div>
         </div>
 
         {/* Status bar */}
