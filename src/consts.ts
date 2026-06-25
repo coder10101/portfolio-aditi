@@ -221,15 +221,15 @@ export const DEGREES = [
   {
     abbr: "MBA",
     full: "Master of Business Administration",
-    institution: "Kathmandu University School of Management",
-    year: "2019",
+    institution: "Lincoln University",
+    year: "2024",
     note: "Combines strategic business thinking with technical leadership.",
   },
   {
     abbr: "BSc",
     full: "Bachelor of Science in Computer Science",
     institution: "Tribhuvan University",
-    year: "2014",
+    year: "2018",
     note: "Algorithms, data structures, systems programming, software engineering.",
   },
 ];
