@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { SectionLabel } from "../SectionLabel";
-import "../../assets/styles/experience.css";
 import { COMMITS, TYPECOLORS } from "../../consts";
+import { SectionLabel } from "../SectionLabel";
 
 function CommitLine({ text, color }: { text: string; color: string }) {
   const colonIdx = text.indexOf(": ");
@@ -9,14 +8,14 @@ function CommitLine({ text, color }: { text: string; color: string }) {
   const msg = colonIdx > -1 ? text.slice(colonIdx + 2) : "";
 
   return (
-    <div className="commit-line-item">
+    <div className="flex gap-[10px] font-mono text-[12.5px] leading-[1.8]">
       <span
-        className="commit-line-type"
+        className="min-w-[52px] shrink-0"
         style={{ color: TYPECOLORS[type] ?? color }}
       >
         {type}:
       </span>
-      <span className="commit-line-msg">{msg}</span>
+      <span className="text-white/55">{msg}</span>
     </div>
   );
 }
@@ -25,37 +24,35 @@ export function Experience() {
   const [expanded, setExpanded] = useState<string | null>("a3f9c12");
 
   return (
-    <section className="experience-section" id="experience">
+    <section id="experience" className="px-8 py-[100px] max-w-[1200px] mx-auto">
       <SectionLabel index="02" title="Experience" />
 
-      <p className="experience-git-command">
+      <p className="font-mono text-[12px] text-[var(--muted-foreground)] mt-4 mb-12 tracking-[0.06em]">
         $ git log --all --graph --oneline
       </p>
 
-      <div className="experience-list">
+      <div className="flex flex-col">
         {COMMITS.map((c, idx) => {
           const isOpen = expanded === c.hash;
 
           return (
             <div
               key={c.hash}
-              className="commit-row"
+              className="grid grid-cols-[24px_auto_1fr_auto] gap-x-4 items-start cursor-pointer"
               onClick={() => setExpanded(isOpen ? null : c.hash)}
             >
               {/* Graph */}
-              <div className="commit-graph">
+              <div className="flex flex-col items-center pt-[2px]">
                 <div
-                  className={`commit-dot ${isOpen ? "active" : ""}`}
-                  style={
-                    {
-                      "--dot-color": c.color,
-                      border: `2px solid ${c.color}`,
-                    } as React.CSSProperties
-                  }
+                  className="w-[14px] h-[14px] rounded-full shrink-0 z-10 transition-colors duration-200"
+                  style={{
+                    background: isOpen ? c.color : "var(--secondary)",
+                    border: `2px solid ${c.color}`,
+                  }}
                 />
                 {idx < COMMITS.length - 1 && (
                   <div
-                    className="commit-line"
+                    className="w-[2px] grow min-h-[60px] opacity-30"
                     style={{
                       background: `linear-gradient(to bottom, ${c.color}, ${COMMITS[idx + 1].color})`,
                     }}
@@ -64,14 +61,17 @@ export function Experience() {
               </div>
 
               {/* Hash + tag */}
-              <div className="commit-meta">
-                <div className="commit-hash-row">
-                  <span className="commit-hash" style={{ color: c.color }}>
+              <div className="pt-[1px]">
+                <div className="flex gap-2 items-center mb-1">
+                  <span
+                    className="font-mono text-[12px] tracking-[0.06em]"
+                    style={{ color: c.color }}
+                  >
                     {c.hash}
                   </span>
                   {c.tag && (
                     <span
-                      className="commit-tag"
+                      className="font-mono text-[10px] text-[#0a0a0e] px-2 py-[1px] rounded-[2px] font-semibold"
                       style={{ background: c.color }}
                     >
                       {c.tag}
@@ -82,28 +82,42 @@ export function Experience() {
 
               {/* Content */}
               <div
-                className={`commit-content ${isOpen ? "active" : ""}`}
-                style={
-                  {
-                    "--dot-color": c.color,
-                    paddingBottom: isOpen ? "0" : "2rem",
-                  } as React.CSSProperties
-                }
+                className="pl-5 transition-colors duration-200"
+                style={{
+                  borderLeft: isOpen
+                    ? `2px solid ${c.color}`
+                    : "2px solid rgba(255,255,255,0.06)",
+                  paddingBottom: isOpen ? "0" : "2rem",
+                }}
               >
-                <div className="commit-title">{c.title}</div>
-                <div className="commit-company" style={{ color: c.color }}>
+                <div className="font-serif text-[1.35rem] text-[var(--foreground)] leading-[1.2] mb-[2px]">
+                  {c.title}
+                </div>
+                <div
+                  className="font-sans text-[13px] mb-[2px]"
+                  style={{ color: c.color }}
+                >
                   {c.company}
                 </div>
-                <div className="commit-date">{c.date}</div>
+                <div className="font-mono text-[11px] text-[var(--muted-foreground)] tracking-[0.06em]">
+                  {c.date}
+                </div>
 
-                <div className={`commit-expandable ${isOpen ? "open" : ""}`}>
-                  <div className="commit-details">
+                {/* Expandable */}
+                <div
+                  className="overflow-hidden transition-all duration-400 ease-out"
+                  style={{ maxHeight: isOpen ? "600px" : "0" }}
+                >
+                  <div className="pt-6 pb-8">
                     {c.items.map((item, i) => (
                       <CommitLine key={i} text={item} color={c.color} />
                     ))}
-                    <div className="commit-stack">
+                    <div className="flex flex-wrap gap-[6px] mt-4">
                       {c.stack.map((t) => (
-                        <span key={t} className="stack-tag">
+                        <span
+                          key={t}
+                          className="font-mono text-[10px] tracking-[0.06em] text-[var(--muted-foreground)] bg-[var(--secondary)] px-2 py-[3px] border border-[var(--border)]"
+                        >
                           {t}
                         </span>
                       ))}
@@ -114,8 +128,11 @@ export function Experience() {
 
               {/* Arrow */}
               <div
-                className={`commit-arrow ${isOpen ? "open" : ""}`}
-                style={{ color: c.color }}
+                className="font-mono text-[16px] opacity-60 transition-transform duration-300 self-start mt-[2px]"
+                style={{
+                  color: c.color,
+                  transform: isOpen ? "rotate(90deg)" : "rotate(0deg)",
+                }}
               >
                 ›
               </div>
