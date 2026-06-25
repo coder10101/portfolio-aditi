@@ -1,122 +1,47 @@
 export function AboutSection() {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        padding: "6rem 4rem",
-        borderRight: "1px solid var(--border)",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
+    <div className="relative flex flex-col justify-center px-16 py-24 border-r border-[var(--border)] overflow-hidden max-md:px-8 max-md:py-12 max-md:border-r-0 max-md:border-b">
+      {/* Dot grid background */}
       <div
+        className="absolute inset-0 pointer-events-none"
         style={{
-          position: "absolute",
-          inset: 0,
           backgroundImage:
             "radial-gradient(circle at 1px 1px, rgba(200,245,66,0.07) 1px, transparent 0)",
           backgroundSize: "32px 32px",
-          pointerEvents: "none",
         }}
       />
 
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <div
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "8px",
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "11px",
-            letterSpacing: "0.12em",
-            color: "var(--primary)",
-            marginBottom: "2.5rem",
-            padding: "5px 12px",
-            border: "1px solid var(--primary)",
-            background: "rgba(200,245,66,0.05)",
-          }}
-        >
-          <span
-            style={{
-              width: "6px",
-              height: "6px",
-              borderRadius: "50%",
-              background: "var(--primary)",
-              animation: "pulse 2s ease-in-out infinite",
-            }}
-          />
+      <div className="relative z-10">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.12em] text-[var(--primary)] mb-10 px-3 py-[5px] border border-[var(--primary)] bg-[rgba(200,245,66,0.05)]">
+          <span className="w-[6px] h-[6px] rounded-full bg-[var(--primary)] animate-pulse" />
           AVAILABLE FOR WORK
         </div>
 
-        <h1
-          style={{
-            fontFamily: "'DM Serif Display', serif",
-            fontSize: "clamp(3rem, 6vw, 5.5rem)",
-            lineHeight: 1,
-            letterSpacing: "-0.02em",
-            color: "var(--foreground)",
-            margin: "0 0 1rem",
-          }}
-        >
+        {/* Name */}
+        <h1 className="font-serif text-[clamp(3rem,6vw,5.5rem)] leading-none tracking-[-0.02em] text-[var(--foreground)] m-0 mb-4">
           Aditi <br />
-          <span style={{ fontStyle: "italic", color: "var(--primary)" }}>
-            Acharya
-          </span>
+          <span className="italic text-[var(--primary)]">Acharya</span>
         </h1>
 
-        <div
-          style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: "13px",
-            color: "var(--muted-foreground)",
-            letterSpacing: "0.06em",
-            marginBottom: "2rem",
-          }}
-        >
+        {/* Title */}
+        <div className="font-mono text-[13px] text-[var(--muted-foreground)] tracking-[0.06em] mb-8">
           Senior Software Engineer · 7+ yrs
         </div>
 
-        <p
-          style={{
-            fontFamily: "'Inter', sans-serif",
-            fontSize: "15px",
-            lineHeight: 1.75,
-            color: "var(--muted-foreground)",
-            fontWeight: 300,
-            margin: "0 0 3rem",
-            maxWidth: "420px",
-          }}
-        >
+        {/* Bio */}
+        <p className="font-sans text-[15px] leading-[1.75] text-[var(--muted-foreground)] font-light m-0 mb-12 max-w-[420px]">
           Frontend engineer specializing in React and React Native, with a
           strong foundation in JavaScript and TypeScript. Experienced in
           delivering production-ready web and mobile applications that
           prioritize user experience and business impact.
         </p>
 
-        <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+        {/* CTAs */}
+        <div className="flex gap-3 flex-wrap">
           <a
             href="mailto:aditiacharya2@gmail.com"
-            style={{
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: "12px",
-              letterSpacing: "0.08em",
-              color: "#0a0a0e",
-              background: "var(--primary)",
-              padding: "13px 28px",
-              textDecoration: "none",
-              transition: "transform 0.15s, box-shadow 0.15s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow =
-                "0 8px 24px rgba(200,245,66,0.25)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "none";
-            }}
+            className="font-mono text-[12px] tracking-[0.08em] text-[#0a0a0e] bg-[var(--primary)] px-7 py-[13px] no-underline transition-transform duration-150 hover:-translate-y-[2px] hover:shadow-[0_8px_24px_rgba(200,245,66,0.25)]"
           >
             HIRE ME
           </a>
@@ -133,24 +58,7 @@ export function AboutSection() {
               href={l.href}
               target="_blank"
               rel="noreferrer"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: "12px",
-                letterSpacing: "0.08em",
-                color: "var(--muted-foreground)",
-                border: "1px solid var(--border)",
-                padding: "13px 24px",
-                textDecoration: "none",
-                transition: "color 0.2s, border-color 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "var(--primary)";
-                e.currentTarget.style.borderColor = "var(--primary)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "var(--muted-foreground)";
-                e.currentTarget.style.borderColor = "var(--border)";
-              }}
+              className="font-mono text-[12px] tracking-[0.08em] text-[var(--muted-foreground)] border border-[var(--border)] px-6 py-[13px] no-underline transition-colors duration-200 hover:text-[var(--primary)] hover:border-[var(--primary)]"
             >
               {l.label.toUpperCase()}
             </a>

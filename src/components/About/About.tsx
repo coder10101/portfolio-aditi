@@ -5,11 +5,7 @@ export function About() {
   return (
     <section
       id="about"
-      style={{
-        minHeight: "100vh",
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-      }}
+      className="min-h-screen grid grid-cols-2 max-md:grid-cols-1"
     >
       <AboutSection />
       <CodeEditorSection />
