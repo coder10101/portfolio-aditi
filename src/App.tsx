@@ -7,6 +7,7 @@ import { Skills } from "./components/Skills/Skills";
 import { Education } from "./components/Education/Education";
 import { Contact } from "./components/Contact/Contact";
 import { Footer } from "./components/Footer";
+import { SideNav } from "./components/SideNav";
 
 export default function App() {
   const [booted, setBooted] = useState(false);
@@ -20,6 +21,7 @@ export default function App() {
       {!booted && <BootSequence onComplete={handleBootComplete} />}
 
       <Nav booted={booted} />
+      <SideNav booted={booted} />
 
       <main
         className={`pt-14 transition-opacity duration-700 ${booted ? "opacity-100" : "opacity-0"}`}
