@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SectionLabel } from "./SectionLabel";
+import { SectionLabel } from "../SectionLabel";
 import "../../assets/styles/experience.css";
 import { COMMITS, TYPECOLORS } from "../../consts";
 
