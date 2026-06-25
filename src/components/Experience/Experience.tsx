@@ -1,24 +1,7 @@
 import { useState } from "react";
-import { COMMITS, TYPECOLORS } from "../../consts";
+import { COMMITS } from "../../consts";
 import { SectionLabel } from "../SectionLabel";
-
-function CommitLine({ text, color }: { text: string; color: string }) {
-  const colonIdx = text.indexOf(": ");
-  const type = colonIdx > -1 ? text.slice(0, colonIdx) : text;
-  const msg = colonIdx > -1 ? text.slice(colonIdx + 2) : "";
-
-  return (
-    <div className="flex gap-[10px] font-mono text-[12.5px] leading-[1.8]">
-      <span
-        className="min-w-[52px] shrink-0"
-        style={{ color: TYPECOLORS[type] ?? color }}
-      >
-        {type}:
-      </span>
-      <span className="text-white/55">{msg}</span>
-    </div>
-  );
-}
+import CommitLine from "./CommitLine";
 
 export function Experience() {
   const [expanded, setExpanded] = useState<string | null>("a3f9c12");
@@ -113,12 +96,12 @@ export function Experience() {
                       <CommitLine key={i} text={item} color={commit.color} />
                     ))}
                     <div className="flex flex-wrap gap-[6px] mt-4">
-                      {commit.stack.map((t) => (
+                      {commit.stack.map((commit) => (
                         <span
-                          key={t}
+                          key={commit}
                           className="font-mono text-[10px] tracking-[0.06em] text-[var(--muted-foreground)] bg-[var(--secondary)] px-2 py-[3px] border border-[var(--border)]"
                         >
-                          {t}
+                          {commit}
                         </span>
                       ))}
                     </div>
