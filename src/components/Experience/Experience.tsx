@@ -32,29 +32,29 @@ export function Experience() {
       </p>
 
       <div className="flex flex-col">
-        {COMMITS.map((c, idx) => {
-          const isOpen = expanded === c.hash;
+        {COMMITS.map((commit, idx) => {
+          const isOpen = expanded === commit.hash;
 
           return (
             <div
-              key={c.hash}
+              key={commit.hash}
               className="grid grid-cols-[24px_auto_1fr_auto] gap-x-4 items-start cursor-pointer"
-              onClick={() => setExpanded(isOpen ? null : c.hash)}
+              onClick={() => setExpanded(isOpen ? null : commit.hash)}
             >
               {/* Graph */}
               <div className="flex flex-col items-center pt-[2px]">
                 <div
                   className="w-[14px] h-[14px] rounded-full shrink-0 z-10 transition-colors duration-200"
                   style={{
-                    background: isOpen ? c.color : "var(--secondary)",
-                    border: `2px solid ${c.color}`,
+                    background: isOpen ? commit.color : "var(--secondary)",
+                    border: `2px solid ${commit.color}`,
                   }}
                 />
                 {idx < COMMITS.length - 1 && (
                   <div
                     className="w-[2px] grow min-h-[60px] opacity-30"
                     style={{
-                      background: `linear-gradient(to bottom, ${c.color}, ${COMMITS[idx + 1].color})`,
+                      background: `linear-gradient(to bottom, ${commit.color}, ${COMMITS[idx + 1].color})`,
                     }}
                   />
                 )}
@@ -65,16 +65,16 @@ export function Experience() {
                 <div className="flex gap-2 items-center mb-1">
                   <span
                     className="font-mono text-[12px] tracking-[0.06em]"
-                    style={{ color: c.color }}
+                    style={{ color: commit.color }}
                   >
-                    {c.hash}
+                    {commit.hash}
                   </span>
-                  {c.tag && (
+                  {commit.tag && (
                     <span
                       className="font-mono text-[10px] text-[#0a0a0e] px-2 py-[1px] rounded-[2px] font-semibold"
-                      style={{ background: c.color }}
+                      style={{ background: commit.color }}
                     >
-                      {c.tag}
+                      {commit.tag}
                     </span>
                   )}
                 </div>
@@ -91,16 +91,16 @@ export function Experience() {
                 }}
               >
                 <div className="font-serif text-[1.35rem] text-[var(--foreground)] leading-[1.2] mb-[2px]">
-                  {c.title}
+                  {commit.title}
                 </div>
                 <div
                   className="font-sans text-[13px] mb-[2px]"
-                  style={{ color: c.color }}
+                  style={{ color: commit.color }}
                 >
-                  {c.company}
+                  {commit.company}
                 </div>
                 <div className="font-mono text-[11px] text-[var(--muted-foreground)] tracking-[0.06em]">
-                  {c.date}
+                  {commit.date}
                 </div>
 
                 {/* Expandable */}
@@ -109,11 +109,11 @@ export function Experience() {
                   style={{ maxHeight: isOpen ? "600px" : "0" }}
                 >
                   <div className="pt-6 pb-8">
-                    {c.items.map((item, i) => (
-                      <CommitLine key={i} text={item} color={c.color} />
+                    {commit.items.map((item, i) => (
+                      <CommitLine key={i} text={item} color={commit.color} />
                     ))}
                     <div className="flex flex-wrap gap-[6px] mt-4">
-                      {c.stack.map((t) => (
+                      {commit.stack.map((t) => (
                         <span
                           key={t}
                           className="font-mono text-[10px] tracking-[0.06em] text-[var(--muted-foreground)] bg-[var(--secondary)] px-2 py-[3px] border border-[var(--border)]"
@@ -130,7 +130,7 @@ export function Experience() {
               <div
                 className="font-mono text-[16px] opacity-60 transition-transform duration-300 self-start mt-[2px]"
                 style={{
-                  color: c.color,
+                  color: commit.color,
                   transform: isOpen ? "rotate(90deg)" : "rotate(0deg)",
                 }}
               >
