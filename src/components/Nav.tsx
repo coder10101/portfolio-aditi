@@ -67,6 +67,14 @@ export function Nav({ booted }: NavProps) {
               </button>
             </li>
           ))}
+          <li>
+            <a
+              href="mailto:aditiacharya2@gmail.com"
+              className="font-mono text-[11px] tracking-[0.1em] text-[#0a0a0e] bg-[var(--primary)] px-4 py-[7px] no-underline transition-opacity duration-200 hover:opacity-85"
+            >
+              HIRE
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
