@@ -20,8 +20,15 @@ export function CodeEditorSection({ booted }: { booted: boolean }) {
             engineer.ts
           </div>
           <div className="flex items-center gap-2 px-5 py-[10px] font-mono text-[12px] text-white/30">
-            <span className="w-2 h-2 rounded-[2px] bg-white/15" />
-            resume.pdf
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 px-5 py-[10px] font-mono text-[12px] text-white/30 no-underline hover:text-white/60 transition-colors duration-200"
+            >
+              <span className="w-2 h-2 rounded-[2px] bg-white/15" />
+              resume.pdf
+            </a>
           </div>
         </div>
 
