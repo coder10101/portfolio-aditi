@@ -39,3 +39,104 @@ export const STATS = [
   { v: "Web+iOS+Android", l: "Platforms" },
   { v: "MBA+BSc", l: "Degrees" },
 ];
+
+export const COMMITS = [
+  {
+    hash: "f8a3c21",
+    date: "Mar 2023 – Present",
+    company: "Fetchly",
+    title: "Software Engineer",
+    tag: "HEAD",
+    color: "#c8f542",
+    stack: [
+      "React Native",
+      "Rails Hotwire",
+      "Sanity",
+      "Typesense",
+      "TailwindCSS",
+      "CI/CD",
+    ],
+
+    items: [
+      "feat: built React Native app from scratch for iOS + Android with full release lifecycle ownership",
+      "ci: designed CI/CD pipelines for mobile + admin systems ensuring automated build/test/release flows",
+      "feat: integrated Sanity CMS enabling non-dev content management without app redeploys",
+      "feat: implemented Typesense search for typo-tolerant and fast in-app discovery",
+      "feat: built Rails Hotwire + Stimulus admin panel for content management automation",
+      "ui: developed responsive UI using TailwindCSS + maintained legacy ReactJS/Azure system",
+      "feat: built Vue.js modules with reusable components + third-party API integrations",
+    ],
+  },
+
+  {
+    hash: "c91b772",
+    date: "Dec 2022 – Mar 2023",
+    company: "Gurzu",
+    title: "Senior Software Engineer",
+    color: "#7dc4f5",
+    stack: [
+      "ReactJS",
+      "Storybook",
+      "GitHub Actions",
+      "CircleCI",
+      "Agile",
+      "Mentoring",
+    ],
+
+    items: [
+      "lead: supervised engineering team ensuring sprint alignment and delivery ownership",
+      "ci: migrated CI/CD from CircleCI → GitHub Actions reducing maintenance overhead",
+      "feat: built Storybook design system improving frontend reusability and consistency",
+      "feat: implemented infinite scrolling improving user engagement metrics",
+      "mentor: guided junior engineers and owned frontend architecture decisions",
+    ],
+  },
+
+  {
+    hash: "a11d4f0",
+    date: "Jul 2020 – Dec 2022",
+    company: "Gurzu",
+    title: "Software Engineer",
+    color: "#cf8aff",
+    stack: ["Node.js", "PostgreSQL", "AWS S3", "JWT", "Redis", "Firebase"],
+
+    items: [
+      "feat: led full-stack mobile app development including architecture and DB design",
+      "api: built RESTful APIs and standardised response payloads reducing integration issues",
+      "infra: configured AWS S3 multi-env uploads with secure authentication using JWT + Passport",
+      "feat: implemented Firebase Cloud Messaging push notifications",
+      "perf: used Redis for OTP + auth token storage improving security and performance",
+      "collab: worked with PM in bi-weekly client meetings to align requirements and delivery",
+    ],
+  },
+
+  {
+    hash: "d32f901",
+    date: "Jun 2019 – Jul 2020",
+    company: "Gurzu",
+    title: "Associate Software Engineer",
+    color: "#f5a623",
+    stack: ["ReactJS", "CSS", "Agile", "Performance Optimization"],
+
+    items: [
+      "feat: built responsive video editor with timeline and live preview using ReactJS",
+      "process: introduced Scrum/Agile practices improving sprint planning visibility",
+      "perf: reduced redundant API calls improving frontend performance",
+    ],
+  },
+
+  {
+    hash: "b77c210",
+    date: "Oct 2018 – Dec 2018",
+    company: "Truemark Technology",
+    title: "Software Engineer Intern",
+    color: "#ff7b7b",
+    stack: ["HTML", "CSS", "JavaScript", "React", "Node.js"],
+
+    items: [
+      "feat: built web-based game using HTML, CSS, and vanilla JavaScript",
+      "feat: implemented social authentication using React + Node.js REST APIs",
+      "learn: strengthened core JavaScript fundamentals through hands-on development",
+    ],
+  },
+];
