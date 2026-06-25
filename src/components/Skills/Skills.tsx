@@ -1,69 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "../../assets/styles/skills.css";
 import { SectionLabel } from "../SectionLabel";
-
-const skillGroups = [
-  {
-    label: "Frontend",
-    skills: [
-      {
-        name: "ReactJS",
-        level: 95,
-        note: "Hooks, performance optimisation, legacy codebases",
-      },
-      {
-        name: "React Native",
-        level: 90,
-        note: "iOS + Android, full App Store lifecycle",
-      },
-      {
-        name: "TailwindCSS",
-        level: 90,
-        note: "Responsive design, design systems",
-      },
-    ],
-  },
-  {
-    label: "Backend",
-    skills: [
-      { name: "Node.js", level: 85, note: "REST APIs, JWT/Passport auth" },
-      {
-        name: "Ruby on Rails",
-        level: 70,
-        note: "Hotwire Stimulus, admin panels, API design",
-      },
-      { name: "Redis", level: 78, note: "OTP storage, session management" },
-    ],
-  },
-  {
-    label: "Database & Cloud",
-    skills: [
-      {
-        name: "PostgreSQL / MySQL",
-        level: 86,
-        note: "Schema design, query optimisation",
-      },
-      { name: "AWS S3", level: 80, note: "Multi-environment image uploads" },
-      {
-        name: "GitHub Actions",
-        level: 90,
-        note: "CI/CD pipeline design and maintenance",
-      },
-      { name: "Firebase", level: 75, note: "FCM push notifications" },
-    ],
-  },
-];
-
-const alsoTags = [
-  "Agile/Scrum",
-  "Sanity CMS",
-  "Typesense",
-  "Storybook",
-  "Technical Mentorship",
-  "App Store Releases",
-  "Cross-functional Leadership",
-  "MBA",
-];
+import { ADDITIONALTAGS, SKILLGROUPS } from "../../consts";
 
 interface Skill {
   name: string;
@@ -134,7 +72,7 @@ export function Skills() {
     return () => obs.disconnect();
   }, []);
 
-  const group = skillGroups[activeGroup];
+  const group = SKILLGROUPS[activeGroup];
 
   return (
     <section className="skills-section" id="skills" ref={ref}>
@@ -146,14 +84,14 @@ export function Skills() {
         {/* Sidebar */}
         <div className="skills-sidebar">
           <div className="skills-sidebar__heading">MODULES</div>
-          {skillGroups.map((g, i) => (
+          {SKILLGROUPS.map((group, i) => (
             <button
-              key={g.label}
+              key={group.label}
               className={`skills-sidebar__btn ${activeGroup === i ? "active" : ""}`}
               onClick={() => setActiveGroup(i)}
             >
               <span className="skills-sidebar__dot" />
-              <span className="skills-sidebar__label">{g.label}</span>
+              <span className="skills-sidebar__label">{group.label}</span>
             </button>
           ))}
         </div>
@@ -172,9 +110,9 @@ export function Skills() {
       {/* Also section */}
       <div className="skills-also">
         <span className="skills-also__label">ALSO:</span>
-        {alsoTags.map((t) => (
-          <span key={t} className="skills-also__tag">
-            {t}
+        {ADDITIONALTAGS.map((tag) => (
+          <span key={tag} className="skills-also__tag">
+            {tag}
           </span>
         ))}
       </div>

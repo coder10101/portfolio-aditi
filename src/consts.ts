@@ -153,3 +153,66 @@ export const TYPECOLORS: Record<string, string> = {
   team: "#cf8aff",
   process: "#f5a623",
 };
+
+export const SKILLGROUPS = [
+  {
+    label: "Frontend",
+    skills: [
+      {
+        name: "ReactJS",
+        level: 95,
+        note: "Hooks, performance optimisation, legacy codebases",
+      },
+      {
+        name: "React Native",
+        level: 90,
+        note: "iOS + Android, full App Store lifecycle",
+      },
+      {
+        name: "TailwindCSS",
+        level: 90,
+        note: "Responsive design, design systems",
+      },
+    ],
+  },
+  {
+    label: "Backend",
+    skills: [
+      { name: "Node.js", level: 85, note: "REST APIs, JWT/Passport auth" },
+      {
+        name: "Ruby on Rails",
+        level: 70,
+        note: "Hotwire Stimulus, admin panels, API design",
+      },
+      { name: "Redis", level: 78, note: "OTP storage, session management" },
+    ],
+  },
+  {
+    label: "Database & Cloud",
+    skills: [
+      {
+        name: "PostgreSQL / MySQL",
+        level: 86,
+        note: "Schema design, query optimisation",
+      },
+      { name: "AWS S3", level: 80, note: "Multi-environment image uploads" },
+      {
+        name: "GitHub Actions",
+        level: 90,
+        note: "CI/CD pipeline design and maintenance",
+      },
+      { name: "Firebase", level: 75, note: "FCM push notifications" },
+    ],
+  },
+];
+
+export const ADDITIONALTAGS = [
+  "Agile/Scrum",
+  "Sanity CMS",
+  "Typesense",
+  "Storybook",
+  "Technical Mentorship",
+  "App Store Releases",
+  "Cross-functional Leadership",
+  "MBA",
+];
