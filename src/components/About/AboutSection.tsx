@@ -30,7 +30,7 @@ export function AboutSection() {
         </div>
 
         {/* Bio */}
-        <p className="font-sans text-[15px] leading-[1.75] text-[var(--muted-foreground)] font-light m-0 mb-12 max-w-[420px]">
+        <p className="font-sans text-[15px] leading-[1.75] text-[var(--muted-foreground)] font-light m-0 mb-12 max-w-[420px] text-justify">
           Frontend engineer specializing in React and React Native, with a
           strong foundation in JavaScript and TypeScript. Experienced in
           delivering production-ready web and mobile applications that

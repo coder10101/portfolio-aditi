@@ -5,7 +5,7 @@ export function About({ booted }: { booted: boolean }) {
   return (
     <section
       id="about"
-      className="min-h-screen grid grid-cols-2 max-md:grid-cols-1"
+      className="min-h-screen grid grid-cols-[4fr_6fr] max-md:grid-cols-1"
     >
       <AboutSection />
       <CodeEditorSection booted={booted} />
