@@ -39,7 +39,7 @@ export function Contact() {
     { key: "availability", value: "open to opportunities", highlight: true },
     {
       key: "preference",
-      value: "Senior / Full Stack Engineer",
+      value: "Frontend/ Mobile / Full Stack Engineer",
       highlight: false,
     },
     { key: "location", value: "remote · hybrid · on-site", highlight: false },
@@ -73,7 +73,9 @@ export function Contact() {
                 <span
                   className="font-mono text-[12px] tracking-[0.04em]"
                   style={{
-                    color: item.highlight ? "#c8f542" : "var(--foreground)",
+                    color: item.highlight
+                      ? "var(--primary)"
+                      : "var(--foreground)",
                   }}
                 >
                   "{item.value}"

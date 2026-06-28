@@ -21,9 +21,7 @@ export function AboutSection() {
         {/* Name */}
         <h1 className="font-display text-[clamp(3rem,6vw,5.5rem)] leading-none tracking-[-0.02em] text-[var(--foreground)] m-0 mb-4">
           Aditi <br />
-          <span className="italic text-[var(--primary)]">
-            Acharya
-          </span>
+          <span className="italic text-[var(--primary)]">Acharya</span>
         </h1>
 
         {/* Title */}
@@ -43,7 +41,7 @@ export function AboutSection() {
         <div className="flex gap-3 flex-wrap">
           <a
             href="mailto:aditiacharya2@gmail.com"
-            className="font-mono text-[12px] tracking-[0.08em] text-[#0a0a0e] bg-[var(--primary)] px-7 py-[13px] no-underline transition-transform duration-150 hover:-translate-y-[2px] hover:shadow-[0_8px_24px_rgba(200,245,66,0.25)]"
+            className="font-mono text-[12px] tracking-[0.08em] text-[#0a0a0e] bg-[var(--primary)] px-7 py-[13px] no-underline transition-transform duration-150 hover:-translate-y-[2px] hover:shadow-[0_8px_24px_rgba(66,245,215,0.25)]"
           >
             HIRE ME
           </a>

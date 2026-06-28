@@ -46,7 +46,7 @@ export function SkillBar({
           style={{
             width: compiled ? `${skill.level}%` : "0%",
             background:
-              "linear-gradient(to right, var(--primary), rgba(200,245,66,0.5))",
+              "linear-gradient(to right, var(--primary), rgba(66,245,215,0.5))",
             transitionDelay: `${index * 0.15}s`,
           }}
         />
