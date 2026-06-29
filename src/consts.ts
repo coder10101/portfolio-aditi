@@ -45,7 +45,7 @@ export const COMMITS = [
     hash: "f8a3c21",
     date: "Mar 2023 – Present",
     company: "Fetchly",
-    title: "Software Engineer",
+    title: "Senior Software Engineer",
     tag: "HEAD",
     color: "#c8f542",
     stack: [
